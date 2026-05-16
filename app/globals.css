@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+/* MANIPULATION — V SHAPE */
+@keyframes dipLeft {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes dipMid {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(14px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes dipRight {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-dip-left { animation: dipLeft 1.4s ease-in-out infinite; }
+.animate-dip-mid { animation: dipMid 1.4s ease-in-out infinite; }
+.animate-dip-right { animation: dipRight 1.4s ease-in-out infinite; }
+
+/* DISTRIBUTION — RISING */
+@keyframes rise1 {
+  0% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rise2 {
+  0% { transform: translateY(14px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rise3 {
+  0% { transform: translateY(18px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-rise-1 { animation: rise1 1.2s ease-out infinite alternate; }
+.animate-rise-2 { animation: rise2 1.2s ease-out infinite alternate; }
+.animate-rise-3 { animation: rise3 1.2s ease-out infinite alternate; }
