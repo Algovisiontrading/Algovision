@@ -207,7 +207,8 @@ export default function CRTPage() {
       `}</style>
 
       <main
-        className="min-h-screen text-[#f3f3f3] relative overflow-x-hidden"
+        className="min-h-screen text-[#f3f3f3] relative overflow-visible"
+
         style={{ background: "linear-gradient(180deg, #050806 0%, #0a1a0f 40%, #0f2d1a 100%)" }}
       >
         {/* GRID */}
@@ -215,27 +216,57 @@ export default function CRTPage() {
         {/* VIGNETTE */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 pointer-events-none" />
 
-        {/* NAVBAR */}
+        {/* NAVBAR — RIGHT‑ALIGNED NAVIGATION */}
         <header className="flex justify-between items-center px-8 py-6 border-b border-green-500/20 bg-[#050806]/40 backdrop-blur-sm relative z-50">
+
+          {/* LEFT — LOGO */}
           <div className="text-lg font-semibold tracking-wide text-[#f3f3f3] drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
             AlgoVision
           </div>
+
+          {/* RIGHT — NAVIGATION */}
           <nav className="hidden md:flex items-center gap-8 text-[#f3f3f3]/60 text-sm">
+
             <div className="relative group">
-              <button className="hover:text-white transition flex items-center gap-1">
+              <div className="hover:text-white transition flex items-center gap-1 cursor-pointer">
                 Algorithms <span className="text-xs">▼</span>
-              </button>
-              <div className="absolute right-0 mt-2 hidden group-hover:flex flex-col bg-[#0a0f0a]/90 border border-green-500/20 rounded-lg shadow-lg p-3 w-48 backdrop-blur-md z-50">
+              </div>
+
+
+              <div
+                className="
+                  absolute right-0 mt-2
+                  opacity-0 pointer-events-none
+                  group-hover:opacity-100 group-hover:pointer-events-auto
+                  transition-all duration-150
+                  flex flex-col
+                  bg-[#0a0f0a]/90
+                  border border-green-500/20
+                  rounded-lg shadow-lg
+                  p-3 w-48
+                  backdrop-blur-md
+                  z-[9999]
+                "
+              >
+
                 <a href="/crt" className="text-white transition py-1.5 text-sm">CRT Playbook</a>
                 <a href="/ifvg" className="text-[#f3f3f3]/70 hover:text-white transition py-1.5 text-sm">IFVG</a>
                 <a href="/qt" className="text-[#f3f3f3]/70 hover:text-white transition py-1.5 text-sm">Quarterly Theory</a>
               </div>
             </div>
+
+
             <a href="/examples" className="hover:text-white transition">Examples</a>
             <a href="/testimonials" className="hover:text-white transition">Testimonials</a>
             <a href="/faq" className="hover:text-white transition">FAQ</a>
-            <button className="px-5 py-2 rounded-full border border-green-500/20 hover:bg-green-500/10 transition text-white">Login</button>
+
+            {/* LOGIN BUTTON */}
+            <button className="px-5 py-2 rounded-full border border-green-500/20 hover:bg-green-500/10 transition text-white">
+              Login
+            </button>
           </nav>
+
+          {/* MOBILE MENU BUTTON */}
           <button className="md:hidden text-white text-2xl" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
         </header>
 
