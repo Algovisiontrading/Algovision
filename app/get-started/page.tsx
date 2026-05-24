@@ -11,41 +11,26 @@ export default function GetStartedPage() {
     <main className="min-h-screen bg-[#05060A] text-slate-100">
 
       {/* NAVBAR */}
-      <header className="flex justify-between items-center px-8 py-6 border-b border-green-500/20 bg-[#050806]/40 backdrop-blur-sm relative z-50">
-        <div className="text-lg font-semibold tracking-wide text-[#f3f3f3] drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-          AlgoVision
+      <header className="relative z-50 border-b border-white/[0.06] bg-[#030508]/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-[#00ff88] font-black text-xl tracking-tight">Algo</span>
+            <span className="text-white font-black text-xl tracking-tight">Vision</span>
+          </Link>
+          <nav className="hidden md:flex items-center gap-8 text-sm text-white/60">
+            <Link href="/crt"          className="hover:text-white transition-colors">CRT</Link>
+            <Link href="/ifvg"         className="hover:text-white transition-colors">IFVG</Link>
+            <Link href="/quarterly"    className="hover:text-white transition-colors">Quarterly Theory</Link>
+            <Link href="/examples"     className="hover:text-white transition-colors">Examples</Link>
+            <Link href="/testimonials" className="hover:text-white transition-colors">Testimonials</Link>
+            <Link href="/faq"          className="hover:text-white transition-colors">FAQ</Link>
+          </nav>
+          <Link href="/join" className="hidden md:inline-flex items-center gap-2 bg-[#00ff88] text-black text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-[#00e67a] transition-colors">
+            Join AlgoVision
+          </Link>
         </div>
-
-        <nav className="hidden md:flex items-center gap-8 text-[#f3f3f3]/60 text-sm">
-          <div className="relative group">
-            <button className="hover:text-white transition flex items-center gap-1">
-              Algorithms <span className="text-xs">▼</span>
-            </button>
-
-            <div className="absolute right-0 mt-2 hidden group-hover:flex flex-col bg-[#0a0f0a]/90 border border-green-500/20 rounded-lg shadow-lg p-3 w-48 backdrop-blur-md z-50">
-              <a href="/crt" className="text-white transition py-1.5 text-sm">CRT Playbook</a>
-              <a href="/ifvg" className="text-[#f3f3f3]/70 hover:text-white transition py-1.5 text-sm">IFVG</a>
-              <a href="/qt" className="text-[#f3f3f3]/70 hover:text-white transition py-1.5 text-sm">Quarterly Theory</a>
-            </div>
-          </div>
-
-          <a href="/examples" className="hover:text-white transition">Examples</a>
-          <a href="/testimonials" className="hover:text-white transition">Testimonials</a>
-          <a href="/faq" className="hover:text-white transition">FAQ</a>
-
-          <button className="px-5 py-2 rounded-full border border-green-500/20 hover:bg-green-500/10 transition text-white">
-            Login
-          </button>
-        </nav>
-
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
       </header>
+
 
 
 
@@ -286,6 +271,21 @@ export default function GetStartedPage() {
           </div>
         </div>
       </section>
+
+
+      <footer className="relative z-10 border-t border-white/[0.06] py-10 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/30">
+          <div className="flex items-center gap-2">
+            <span className="text-[#00ff88] font-black">Algo</span>
+            <span className="text-white font-black">Vision</span>
+          </div>
+          <p>© {new Date().getFullYear()} AlgoVision. All rights reserved.</p>
+          <p className="text-xs text-white/20 max-w-xs text-center md:text-right">
+            Trading involves significant risk. Past results do not guarantee future performance.
+          </p>
+        </div>
+      </footer>
+
     </main>
   );
 }
